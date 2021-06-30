@@ -1,0 +1,6 @@
+<mat-card class="item" *ngIf="userstory" (dblclick)="open.emit(userstory)">
+    <h2 class="truncate itemTitle">{{ userstory.name }}</h2>
+    <p class="truncate">
+      {{ userstory.description }}
+    </p>
+  </mat-card>

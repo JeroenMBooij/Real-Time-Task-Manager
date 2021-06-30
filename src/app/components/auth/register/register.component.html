@@ -1,0 +1,34 @@
+<form  class='register-form' [formGroup]="registerForm">
+    <div class="registerCard">
+        <input id=emailField formControlName="email" placeholder="email"type="text" autocomplete="email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.required" class="warningText">
+            Email is required.
+        </div>
+        <div *ngIf="alert" class="warningText">
+            <p> {{ alert.message }}</p>
+        </div>
+        <input id=passwordField formControlName="password" placeholder="password"type="password" autocomplete="current-password">
+        <div *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required" class="warningText">
+            Password is required.
+        </div>
+        <div *ngIf="alert" class="warningText">
+            <p> {{ alert.message }}</p>
+        </div>
+        <input id=passwordRepeatField formControlName="repeatPassword" placeholder="Repeat Password"type="password" autocomplete="current-password">
+        <div *ngIf="repeatPassword.invalid && (repeatPassword.dirty || repeatPassword.touched) && repeatPassword.errors.required" class="warningText">
+            Repeat password is required.
+        </div>
+        <div *ngIf="alert" class="warningText">
+            <p> {{ alert.message }}</p>
+        </div>
+        <main-button class="registerButton" (click)="tryRegister(registerForm.value)" type="button" label="register"></main-button>
+        <p>
+            Already have an account? 
+            <a href="/login">log in</a>
+        </p>
+    </div>
+    <div class="rightContainer">
+
+    </div>
+
+</form>

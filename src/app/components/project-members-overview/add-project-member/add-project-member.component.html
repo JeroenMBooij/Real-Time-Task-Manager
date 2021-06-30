@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-center mt-5">
+    <form [formGroup]="memberForm" class="d-flex flex-column w-50" (ngSubmit)="addMember()">
+        <div class="inputContainer">
+            <mat-label>Name</mat-label>
+            <input type="text" [(ngModel)]="member.username" formControlName="name" class="form-control" placeholder="name">
+            <div *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required" class="warningText">
+                Name is required.
+            </div>
+            <div class="warningText">
+                {{errors}}
+            </div>
+        </div>    
+        <div class="inputContainer" >
+            <mat-label>Role</mat-label>
+            <mat-select class="form-control" formControlName="role">
+                <mat-option *ngFor="let role of roles" [value]="role">
+                    {{role}}
+                </mat-option>
+            </mat-select>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="w-25">
+                <main-button (click)="close()" label="cancel"></main-button>
+            </div>
+            <div class="w-25">
+                <main-button type="submit" label="create" style="display: block;"></main-button>
+            </div>
+        </div>
+    </form>
+</div>

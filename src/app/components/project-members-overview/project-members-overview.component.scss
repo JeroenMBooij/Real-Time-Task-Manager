@@ -1,0 +1,41 @@
+table{
+    table-layout: fixed;
+}
+
+.description-column{
+    text-align:justify;
+}
+
+th {
+    color: white;
+    background-color: var(--base-background-color);
+}
+
+tr {
+    border: solid var(--base-background-color);
+}
+tr:hover {
+    background-color: #d2d2d2;
+    cursor: pointer;
+}
+
+td{
+    padding: 5px 5px 0 5px !important;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 0 !important;
+}
+
+.buttonContainer {
+    flex: 2;
+    margin-left: 24px;
+    margin-right: 24px;
+    min-width: 120px;
+}
+
+.CreateButton {
+    float: right;
+    width: 240px;
+    align-self: flex-end;
+}

@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import "~ngx-smart-modal/ngx-smart-modal";
+
+:root{
+    --base-color: #DF8D00;
+    --base-light-color: #ffab1a;
+    --base-background-color: #222831;
+    --base-background-light-color: #272e38;
+}
+
+body {
+    background-color: var(--base-background-color);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0
+}
+
+a {
+    color: var(--base-color);
+    font-size: 20px;
+}
+
+a:hover {
+    color: var(--base-color);
+}
+
+
+.truncate{
+    word-break: break-all;
+    line-height: 1.4rem;
+    position: relative;
+    max-height: 1.4rem;
+    overflow: hidden;
+    padding-right: 1rem; /* space for ellipsis */
+}
+
+.truncate::before {
+    position: absolute;
+    content: "...";
+    inset-block-end: 0; /* "bottom" */
+    inset-inline-end: 0; /* "right" */
+  }
+
+.truncate::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: 0; /* "right" */
+    width: 1rem;
+    height: 1rem;
+    background: white;
+  }
+
+.description-column{
+    max-height: calc(1.4rem * 3) !important;
+    word-break: break-all;
+}
+
+.w-5{
+    width: 5%;
+}
+
+.w-10{
+    width: 10%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.delete-button > button
+{
+    background-color: #d9534f !important;
+}
+
+.cancel-button > button
+{
+    background-color: #696969 !important;
+}
+
+.mat-snack-bar-container{
+    background-color: green;
+}
+
+.snackbar-container{
+    color:white;
+}
+
+mat-label{
+    font-size: 20px;
+    color: white;
+}
+
+mat-slide-toggle{
+    height: 60px !important;
+}
+
+.mat-slide-toggle-bar {
+    background-color: white;
+}
+.mat-slide-toggle-label{
+    display: flex;
+    flex-direction: column-reverse !important;
+    height: 60px;
+    font-size: 20px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

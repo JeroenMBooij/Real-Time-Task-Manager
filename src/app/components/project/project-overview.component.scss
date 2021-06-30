@@ -1,0 +1,114 @@
+.container {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fillUpHeader {
+    flex: 11;
+}
+
+.flex1 {
+    flex: 1
+}
+.flex2 {
+    flex: 2
+}
+
+.flex5 {
+    flex: 5
+}
+
+.width100 {
+    width: 100%;
+}
+
+.width150 {
+    width: 150px;
+}
+
+.checkboxForm {
+    margin-right: 12px;
+}
+
+.selectableRow:hover {
+    background-color: #d2d2d2;
+    cursor: pointer;
+}
+
+.buttonContainer {
+    flex: 1;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.rowCellPad {
+    padding: 12px;
+}
+
+table{
+    table-layout: fixed;
+}
+
+.description-column{
+    text-align:justify;
+}
+
+th {
+    color: white;
+    background-color: var(--base-background-color);
+}
+
+tr {
+    border: solid var(--base-background-color);
+}
+tr:hover {
+    background-color: #d2d2d2;
+    cursor: pointer;
+}
+
+td{
+    padding: 5px 5px 0 5px !important;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 0 !important;
+}
+
+.firstColumn {
+    padding-left: 5px;
+    margin-left: 5px;
+}
+
+.buttonContainer {
+    flex: 2;
+    margin-left: 24px;
+    margin-right: 24px;
+    min-width: 120px;
+}
+
+.CreateButton {
+    float: right;
+    width: 240px;
+    align-self: flex-end;
+}
+
+.archivedHeader {
+    flex: 1;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.archivedText {
+    position: relative;
+    top: 25px;
+}
+
+.archivedCheckBox {
+    position: relative;
+    right: 0px;
+    margin-left: auto;
+    margin-right: 12px;
+    width: 25%;
+    max-width: 48px;
+}

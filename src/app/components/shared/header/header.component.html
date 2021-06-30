@@ -1,0 +1,9 @@
+<header class="d-flex justify-content-between">
+    <img src="/assets/images/TaskManagerLogo.png" height="50" [routerLink]="['/']">
+    <a *ngIf="this.authService.isLoggedIn()" href="#" (click)="logOut()">log out</a>
+    <p *ngIf="!this.authService.isLoggedIn()">
+        <a href="/login">login</a>
+        | 
+        <a href="/register">register</a>
+    </p>    
+</header>

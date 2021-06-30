@@ -1,0 +1,52 @@
+input {
+    background-color: #ffffff;
+    color: black;
+}
+
+mat-select {
+    background-color: #ffffff;
+    color: black;
+}
+
+textarea {
+    background-color: #ffffff;
+    padding: 5px;
+    color: black;
+}
+
+.mat-label {
+    color: #ffffff;
+    position: relative;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+    font-size: 25px;
+   }
+
+
+/*doesnt work google needs to make a tutorial for this !!!!*/
+.mat-form-field-label{
+    color: white;
+}
+
+.inputContainer {
+    margin-bottom: 24px;
+}
+
+.flexContainerRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex1 {
+    flex: 1;
+}
+.flex20 {
+    flex: 20;
+}
+
+.warningText {
+    color: crimson;
+}

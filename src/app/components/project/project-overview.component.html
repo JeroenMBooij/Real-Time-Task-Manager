@@ -1,0 +1,49 @@
+<div class="container flex1">
+  <main-button class="width150, CreateButton" (click)="this.addProject()" label="Create new project">
+  
+  </main-button>
+    <table mat-table [dataSource]="projects" class="w-100">
+
+      <ng-container matColumnDef="owner">
+        <th mat-header-cell class="flex1" *matHeaderCellDef class="w-10"> Owner </th>
+        <td mat-cell id="navigator" (click)="this.navToProject(project)" class="rowCellPad firstColumn" *matCellDef="let project"> <p class="truncate ml-1">{{project.owner}}</p>  </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell class="flex1" *matHeaderCellDef class="w-10"> Name </th>
+        <td mat-cell (click)="this.navToProject(project)" class="rowCellPad" *matCellDef="let project"> <p class="truncate ml-1">{{project.name}}</p>  </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell class="flex1" *matHeaderCellDef class="w-25"> Description </th>
+        <td mat-cell (click)="this.navToProject(project)" class="rowCellPad" *matCellDef="let project"> <p class="truncate ml-1">{{project.description}}</p>  </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell class="flex1" *matHeaderCellDef class="w-10"> Status </th>
+        <td mat-cell (click)="this.navToProject(project)" class="rowCellPad" *matCellDef="let project"> <p class="truncate ml-1">{{project.status}}</p>  </td>
+      </ng-container>
+
+      <ng-container matColumnDef="addproj">
+        <th mat-header-cell class="flex2" *matHeaderCellDef class="w-25"> 
+          <p class="archivedText">
+            Show archived
+          </p>
+          <input type="checkbox" [(ngModel)]="this.showArchived" class="form-control archivedCheckBox" (click)="this.setShowArchived(!this.showArchived)">  
+        </th>
+        <td mat-cell *matCellDef="let project">
+            <div class="buttonContainer">
+              <main-button class="deleteButton" id ="deleteProject" (click)="this.deleteProject(project)" label="Delete">
+      
+              </main-button>
+          </div>
+        </td>
+      </ng-container>
+                    
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell text-center" colspan="5">No projects currently available</td>
+        </tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row class="selectableRow" *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>

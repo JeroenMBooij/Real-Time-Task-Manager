@@ -1,0 +1,15 @@
+<div>
+    <title mat-dialog-title>Task Manager</title>
+    <hr>
+    <mat-dialog-content [innerHtml]="data">
+    </mat-dialog-content>
+    <hr>
+    <mat-dialog-actions>
+        <div class="w-25">
+            <main-button id="cancel" class="cancel-button" (click)="cancel()" label="Cancel"></main-button>
+        </div>
+        <div class="w-25">
+            <main-button id="confirm" (click)="confirm()" label="Confirm"></main-button>
+        </div>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-between">
+
+    <navigation-menu></navigation-menu>
+
+    <div>
+        <div class="d-flex justify-content-end mr-5 mt-5">
+            <div class="w-10">
+                <main-button id="createSprint" (click)="navigateToCreateSprint()" [label]="'Add Sprint'"></main-button>
+            </div>
+        </div>
+        <div class="mat-elevation-z8 m-5">
+            <table mat-table [dataSource]="dataSource" class="w-100">
+        
+                    <!-- Owner Column -->
+                    <ng-container matColumnDef="owner">
+                        <th mat-header-cell *matHeaderCellDef class="w-15"> <h2>Owner</h2> </th>
+                        <td mat-cell *matCellDef="let sprint"> <p class="ml-1 truncate">{{sprint.owner}}</p> </td>
+                    </ng-container>
+                
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef class="w-15"><h2>Name</h2></th>
+                        <td mat-cell *matCellDef="let sprint"> <p class="truncate">{{sprint.name}}</p> </td>
+                    </ng-container>
+                
+                    <!-- Description Column -->
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef class="w-50"><h2>Description</h2></th>
+                        <td mat-cell *matCellDef="let sprint"> <p class="description-column truncate">{{sprint.description}}</p> </td>
+                    </ng-container>
+
+                    <!-- Start Date Column -->
+                    <ng-container matColumnDef="startDate">
+                        <th mat-header-cell *matHeaderCellDef class="text-center"> <h2>Start Date</h2> </th>
+                        <td mat-cell *matCellDef="let sprint" class="w-10 text-center"> {{sprint.startDate}} </td>
+                    </ng-container>
+
+                    <!-- End Date Column -->
+                    <ng-container matColumnDef="endDate">
+                        <th mat-header-cell *matHeaderCellDef class="text-center"> <h2>End Date</h2> </th>
+                        <td mat-cell *matCellDef="let sprint" class="w-10 text-center"> {{sprint.endDate}} </td>
+                    </ng-container>
+                    
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell text-center" colspan="5">No sprints found in project</td>
+                    </tr>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr 
+                        mat-row 
+                        *matRowDef="let sprint; columns: displayedColumns;"
+                        routerLink="/project/{{projectId}}/sprint/{{sprint.id}}/administration"
+                        id="sprintNavigator">
+                    </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<form class='login-form' [formGroup]="loginForm">
+    <div class="loginCard">
+        <input id=emailField formControlName="email" placeholder="email" type="text" autocomplete="email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.required" class="warningText">
+            Email is required.
+        </div>
+        <div *ngIf="alert"  class="warningText">
+            <p> {{ alert.message }}</p>
+        </div>
+        <input id=passwordField formControlName="password" placeholder="password" type="password" autocomplete="current-password">
+        <div *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required" class="warningText">
+            Password is required.
+        </div>
+        <div *ngIf="alert" class="warningText">
+            <p> {{ alert.message }}</p>
+        </div>
+        <main-button class="loginButton" (click)="tryLogin(loginForm.value)" type="button" label="Login"></main-button>
+        <p>
+            don't have an account? 
+            <a href="/register">sign up</a>
+        </p>
+    </div>
+    <div class="rightContainer">
+
+    </div>
+
+</form>

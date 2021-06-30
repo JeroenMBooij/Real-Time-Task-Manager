@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "taskmanager2-18e81": {
+      "hosting": {
+        "TaskManager2": [
+          "taskmanager2-18e81"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "taskmanager2-18e81"
+  }
+}

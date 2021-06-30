@@ -1,0 +1,28 @@
+
+<nav class="d-flex flex-column">
+        <a routerLink="/project/{{projectId}}/backlog"
+            routerLinkActive="active-link"
+            id="backlogLink">
+            Backlog
+        </a>
+
+        <a routerLink="/project/{{projectId}}/scrumboard"
+            routerLinkActive="active-link">
+            Scrumboard
+        </a>
+
+        <a routerLink="/project/{{projectId}}/sprints"
+            routerLinkActive="active-link"
+            id="sprintLink">
+            Sprints
+        </a>
+
+        <a routerLink="/project/{{projectId}}/members">Project Members</a>
+
+        <a routerLink="/project/{{projectId}}/userstories/archive"
+            routerLinkActive="active-link">
+            Archive
+        </a>
+
+        <a routerLink="/project/{{projectId}}/update">Edit Project</a>
+</nav>

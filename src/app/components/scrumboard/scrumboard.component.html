@@ -1,0 +1,61 @@
+<div>
+    <div class="w-10 m-4">
+        <main-button (click)="navigateToBacklog()" [label]="'Backlog'"></main-button>
+    </div>
+    <app-burndownchart>
+
+    </app-burndownchart>
+    <div 
+        cdkDropListGroup
+        class="content-wrapper max-vw-100 burndownMargin">
+
+        <div class="container-wrapper">
+
+            <div class="container" *ngIf="scrumboard?.unAssignedTasks">
+                <h2>Unassigned Userstories</h2>
+        
+                <mat-card
+                    class="list"
+                    cdkDropList
+                    [cdkDropListData]="scrumboard.unAssignedTasks | async"
+                    (cdkDropListDropped)="drop($event)"
+                    cdkDropListSortingDisabled = "false">
+                        <p class="empty-label" *ngIf="(scrumboard.unAssignedTasks | async)?.length === 0">Empty list</p>
+                        <userstory *ngFor="let userstory of scrumboard.unAssignedTasks | async" 
+                            (open)="openUserstory($event)" 
+                            cdkDrag [userstory]="userstory">
+                        </userstory>
+                </mat-card>
+            </div>
+
+
+            <div class="container" *ngIf="scrumboard?.columns">
+                <div class="d-flex">
+                    <div *ngFor="let column of scrumboard.columns" class="board-header">
+                        <h2>{{ column }}</h2>
+                    </div>
+                </div>
+                <div *ngFor="let assignee of scrumboard.assignees | async; let i = index" class="d-flex">
+                    <mat-card class="list"><b>{{ assignee }}</b></mat-card>
+                    <div class="d-flex">
+                        <mat-card 
+                        *ngFor="let userScrumStatus of scrumboard.scrumLanes[i].scrumStatuses; let j = index"
+                        cdkDropList
+                        [cdkDropListData]="userScrumStatus.userstories | async"
+                        (cdkDropListDropped)="move(assignee, scrumboard.statuses[j], $event)"
+                        cdkDropListSortingDisabled = "false"
+                        class="list">
+                            <userstory *ngFor="let userstory of userScrumStatus.userstories | async" 
+                                (open)="openUserstory($event)" 
+                                cdkDrag [userstory]="userstory">
+                            </userstory>
+                    </mat-card>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+    

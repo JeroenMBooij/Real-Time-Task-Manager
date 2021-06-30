@@ -1,0 +1,32 @@
+input {
+    background-color: #ffffff;
+    color: black;
+}
+
+mat-select {
+    background-color: #ffffff;
+    color: black;
+}
+
+
+
+textarea {
+    background-color: #ffffff;
+    padding: 5px;
+    color: black;
+}
+
+.mat-label {
+    color: #ffffff;
+    position: relative;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+    font-size: 25px;
+   }
+
+.off-top-30 {
+    margin-top: -30px;
+}
