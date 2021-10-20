@@ -1,5 +1,7 @@
 # TaskManager
 
+This project allows users to build a kanban board together with a team. Changes made by one user are reflected in real-time to other users in the same team based on RXJS. Tasks can be organized into sprints and progress can be tracked with a burn down chart. The data was stored in FireStore from FireBase providing us with observables for asynchronous programming and subscription logic
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
 ## Development server
